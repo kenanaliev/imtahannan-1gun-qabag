@@ -9,7 +9,7 @@ const AddForm = () => {
     const [search, setsearch] = useState('')
 
     const fetchData = async () => {
-        const res = await axios.get("http://localhost:7000/")
+        const res = await axios.get("http://localhost:7500/")
         setdata(res.data)
     }
 
@@ -18,7 +18,7 @@ const AddForm = () => {
     }, [])
 
     const deleteData = async (id) => {
-        await axios.delete(`http://localhost:7000/${id}`)
+        await axios.delete(`http://localhost:7500/${id}`)
         fetchData()
     }
 
@@ -33,7 +33,7 @@ const AddForm = () => {
                     price: Yup.number().required('Required').positive("menfi olmaz")
                 })}
                 onSubmit={async (values, { setSubmitting }) => {
-                    await axios.post("http://localhost:7000/", values);
+                    await axios.post("http://localhost:7500/", values);
                     fetchData()
                 }}
             >

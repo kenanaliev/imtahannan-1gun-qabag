@@ -3,7 +3,7 @@ import cors from "cors"
 import mongoose from "mongoose"
 
 const app = express()
-const port = 7000
+const port = 7500
 
 app.use(cors())
 app.use(express.json())
